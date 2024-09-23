@@ -1,0 +1,37 @@
+# Sistema de Gerenciamento Escolar
+
+Este projeto é um sistema simples de gerenciamento escolar, permitindo o cadastro de alunos, cursos e notas. O sistema possibilita a consulta de notas por aluno e curso, além de funcionalidades para atualizar e excluir dados.
+
+## Estrutura do Banco de Dados
+
+O sistema é composto por três tabelas principais:
+- **Alunos**: Armazena os dados dos alunos, como nome, data de nascimento e endereço.
+- **Cursos**: Armazena as informações dos cursos oferecidos.
+- **Notas**: Relaciona alunos e cursos, armazenando as notas obtidas pelos alunos.
+
+## Funcionalidades
+
+1. **Inserção de Dados**:
+   - Cadastrar novos alunos, cursos e notas.
+
+2. **Consultas**:
+   - Listar as notas dos alunos em cada curso.
+
+3. **Atualizações**:
+   - Atualizar as notas de um aluno em um curso específico.
+
+4. **Exclusões**:
+   - Remover alunos e suas notas associadas.
+   - Remover cursos e as notas associadas a eles.
+
+## Requisitos
+
+- MySQL ou outro sistema de gerenciamento de banco de dados SQL.
+- Ferramentas como MySQL Workbench ou phpMyAdmin para executar os scripts SQL.
+
+## Como Usar
+
+1. Clone o repositório para sua máquina local:
+   ```bash
+   git clone https://github.com/seu-usuario/sistema-escolar.git
+   cd sistema-escolar
