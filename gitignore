@@ -1,0 +1,18 @@
+# Ignorar arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos de log
+*.log
+
+# Banco de dados locais
+*.sql
+*.db
+
+# Configurações de IDE
+.idea/
+.vscode/
+
+# Dependências locais
+node_modules/
+vendor/
