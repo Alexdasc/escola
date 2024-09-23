@@ -1,0 +1,54 @@
+DROP DATABASE IF EXISTS escola;
+create database escola;
+use escola; 
+
+CREATE TABLE alunos (
+    id_aluno INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    data_nascimento DATE NOT NULL,
+    endereco VARCHAR(150) NOT NULL
+);
+
+
+CREATE TABLE Cursos (
+    id_curso INT AUTO_INCREMENT PRIMARY KEY,
+    nome_curso VARCHAR(100) NOT NULL,
+    descricao TEXT
+);
+
+create table notas (
+id_nota INT auto_increment PRIMARY KEY,
+    id_aluno INT,
+    id_curso INT,
+    nota DECIMAL(5,2),
+    FOREIGN KEY (id_aluno) REFERENCES Alunos(id_aluno),
+    FOREIGN KEY (id_curso) REFERENCES Cursos(id_curso)
+);
+
+INSERT INTO Alunos (nome, data_nascimento, endereco) VALUES
+('João Silva', '2000-05-15', 'Rua A, 123'),
+('Maria Oliveira', '1999-10-20', 'Rua B, 456'),
+('Carlos Souza', '2001-02-18', 'Rua C, 789');
+
+INSERT INTO Cursos (nome_curso, descricao) VALUES
+('Matemática', 'Curso de Matemática Básica'),
+('portugues', 'Curso de lingua portuguesa'),
+('ciencia', 'Curso de ciencia de naturais');
+
+INSERT INTO Notas (id_alunos, id_curso , nota) VALUES
+(1, 1, 8.5),
+(1, 2, 7.0),
+(2, 1, 9.0),
+(2, 3, 9.0),
+(3, 1, 6.5);
+
+SELECT A.nome AS Nome_Aluno, C.nome_curso AS Nome_Curso, N.nota AS Nota
+FROM Notas N
+JOIN Alunos A ON N.id_aluno = A.id_aluno
+JOIN Cursos C ON N.id_curso = C.id_curso;
+
+UPDATE Notas SET nota = 9.5 WHERE id_aluno = 1 AND id_curso = 1;
+
+DELETE FROM Notas WHERE id_aluno = 3;
+DELETE FROM Cursos WHERE id_curso = 3;
+
